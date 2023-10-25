@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Définir le répertoire de sortie
-OUT_DIR="mybigbucket2024/out/pagerank_data_3"
+OUT_DIR="gs://mybigbucket2024/out/pagerank_data_3"
 
 # Créer un fichier temporaire
 TMP_FILE=$(mktemp)
