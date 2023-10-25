@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Vérification du paramètre
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <path-to-cluster-creation-script>"
+    exit 1
+fi
+
+# Chemin du script de création du cluster
+CLUSTER_CREATION_SCRIPT=$1
+
 # Nom du cluster
 CLUSTER_NAME="cluster-a35a"
 
@@ -9,7 +18,10 @@ PIG_SCRIPT_PATH="dataproc.py"  # Assurez-vous que ce script est disponible local
 OUT_DIR="gs://mybigbucket2024/out"
 
 # Création du cluster
-bash ~/LSDataManagment/CLUSTER/run_cluster0w.sh
+#bash ~/LSDataManagment/CLUSTER/run_cluster0w.sh
+
+# Création du cluster
+bash $CLUSTER_CREATION_SCRIPT
 
 # Copie du script Pig vers le bucket GCS
 gsutil cp $PIG_SCRIPT_PATH gs://mybigbucket2024/
