@@ -29,7 +29,7 @@ bash $CLUSTER_CREATION_SCRIPT
 
 # Exécution du script PySpark
 gcloud dataproc jobs submit pyspark \
---region europe-west1 \
+--region europe-central2 \
 --cluster $CLUSTER_NAME \
 gs://mybigbucket2024/$PYSPARK_SCRIPT_PATH -- gs://mybigbucket2024/small_page_links.nt 3 
 
@@ -38,4 +38,4 @@ gs://mybigbucket2024/$PYSPARK_SCRIPT_PATH -- gs://mybigbucket2024/small_page_lin
 gsutil cat $OUT_DIR/pagerank_data_1/part-r-00000 | head -n 5
 
 # Suppression du cluster
-gcloud dataproc clusters delete $CLUSTER_NAME --region europe-west1
+gcloud dataproc clusters delete $CLUSTER_NAME --region europe-central2
