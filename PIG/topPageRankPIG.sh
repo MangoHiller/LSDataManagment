@@ -8,7 +8,7 @@ TMP_FILE=$(mktemp)
 
 # Boucle sur chaque fichier part-* et stocke les 5 premiers éléments dans le fichier temporaire
 for i in $(seq -w 00 13); do
-    gsutil cat $OUT_DIR/part-000$i | sort -k2,2 -g -r | head -n 5 >> $TMP_FILE
+    gsutil cat $OUT_DIR/part-r-000$i | sort -k2,2 -g -r | head -n 5 >> $TMP_FILE
 done
 
 # Trie le fichier temporaire et affiche les 5 URL ayant le plus grand PageRank
