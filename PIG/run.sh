@@ -9,7 +9,7 @@ PIG_SCRIPT_PATH="dataproc.py"  # Assurez-vous que ce script est disponible local
 OUT_DIR="gs://mybigbucket2024/out"
 
 # Création du cluster
-bash ~/LSDataManagment/CLUSTERrun_cluster0w.sh
+bash ~/LSDataManagment/CLUSTER/run_cluster0w.sh
 
 # Copie du script Pig vers le bucket GCS
 gsutil cp $PIG_SCRIPT_PATH gs://mybigbucket2024/
