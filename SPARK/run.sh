@@ -35,7 +35,7 @@ gs://mybigbucket2024/$PYSPARK_SCRIPT_PATH -- gs://mybigbucket2024/page_links_en.
 
 # Accès aux résultats
 # Le nom de fichier part-r-00000 peut varier, vérifiez le nom correct dans votre bucket GCS
-gsutil cat $OUT_DIR/pagerank_data_1/part-r-00000 | head -n 5
+gsutil cat $OUT_DIR/part-00000 | head -n 5
 
 # Suppression du cluster
-gcloud dataproc clusters delete $CLUSTER_NAME --region europe-central2
+bash ~/LSDataManagment/CLUSTER/delete_Cluster.sh
