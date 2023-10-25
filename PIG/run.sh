@@ -34,7 +34,7 @@ gsutil rm -rf $OUT_DIR
 
 # Exécution du script Pig
 gcloud dataproc jobs submit pig \
---region europe-west1-c \
+--region europe-west10 \
 --cluster $CLUSTER_NAME \
 -f gs://mybigbucket2024/$PIG_SCRIPT_PATH
 
