@@ -22,13 +22,16 @@ gsutil rm -rf $OUT_DIR
 
 # Exécution du script Pig
 gcloud dataproc jobs submit pig \
---region europe-west1 \
+--region europe-west1-c \
 --cluster $CLUSTER_NAME \
 -f gs://mybigbucket2024/$PIG_SCRIPT_PATH
 
 # Accès aux résultats
 # Le nom de fichier part-r-00000 peut varier, vérifiez le nom correct dans votre bucket GCS
-gsutil cat $OUT_DIR/pagerank_data_1/part-r-00000
+#gsutil cat $OUT_DIR/pagerank_data_1/part-r-00000
+
+#lire les 5 premières lignes
+gsutil cat $OUT_DIR/pagerank_data_1/part-r-00000 | head -n 5
 
 # Suppression du cluster
 bash delete_cluster.sh
