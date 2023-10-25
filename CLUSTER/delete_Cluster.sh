@@ -4,6 +4,6 @@
 cluster="cluster-a35a"
 
 echo "Suppression du cluster $cluster..."
-gcloud dataproc clusters delete $cluster --region=europe-west1 --quiet
+gcloud dataproc clusters delete $cluster --region=europe-west1-b --quiet
 
 echo "Suppression du cluster $cluster terminée."
