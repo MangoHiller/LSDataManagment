@@ -6,16 +6,16 @@ CLUSTER_NAME="cluster-a35a"
 # Chemins
 DATA_PATH="gs://public_lddm_data/page_links_en.nt.bz2"
 PIG_SCRIPT_PATH="dataproc.py"  # Assurez-vous que ce script est disponible localement
-OUT_DIR="gs://mybigbucket2024/out/"
+OUT_DIR="gs://mybigbucket2024/out"
 
 # Création du cluster
-bash run_cluster0w.sh
+bash ~/LSDataManagment/CLUSTERrun_cluster0w.sh
 
 # Copie du script Pig vers le bucket GCS
 gsutil cp $PIG_SCRIPT_PATH gs://mybigbucket2024/
 
 ## copy data to bucket
-gsutil cp $DATA_PATH gs://mybigbucket2024/
+#gsutil cp $DATA_PATH gs://mybigbucket2024/
 
 # Suppression du répertoire de sortie si existant
 gsutil rm -rf $OUT_DIR
