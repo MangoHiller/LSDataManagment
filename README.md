@@ -77,6 +77,7 @@ Pour exécuter le code sur votre cluster, suivez les étapes ci-dessous :
 
 # Contributors
 
+|                                                    |                  |
 | -------------------------------------------------- | ---------------- |
 | [@MangoHiller](https://github.com/MangoHiller)     | Hugo LEGUILLIER  |
 | [@miranovic](https://github.com/miranovic)         | Imran NAAR       |
