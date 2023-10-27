@@ -65,9 +65,9 @@ Pour exécuter le code sur votre cluster, suivez les étapes ci-dessous :
 3. Exécutez le script run.sh en spécifiant le chemin vers le script de création du cluster comme argument :
    ```bash
    ./run.sh ~/LSDataManagment/CLUSTER/run_cluster0w.sh
-4. Exécutez le script run.sh topPageRank[...].sh en fonction du type de framework utilisé.
+4. Exécutez le script topPageRank[...].sh en fonction du type de framework utilisé.
     ```bash
-    ./run.sh 
+    ./topPageRankSPARK.sh 
 ## Description des Dossiers et Fichiers
 
 - `LSDataManagment/CLUSTER/` : Contient les scripts pour créer et supprimer les clusters.
@@ -77,6 +77,7 @@ Pour exécuter le code sur votre cluster, suivez les étapes ci-dessous :
 
 # Contributors
 
+|                                                    |                  |
 | -------------------------------------------------- | ---------------- |
 | [@MangoHiller](https://github.com/MangoHiller)     | Hugo LEGUILLIER  |
 | [@miranovic](https://github.com/miranovic)         | Imran NAAR       |
