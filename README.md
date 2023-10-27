@@ -62,17 +62,21 @@ Pour exécuter le code sur votre cluster, suivez les étapes ci-dessous :
 
 1. Clonez le dépôt GitHub à l'adresse [https://github.com/MangoHiller/LSDataManagment](https://github.com/MangoHiller/LSDataManagment).
 2. Naviguez vers le répertoire `LSDataManagment/SCRIPTS/` pour accéder aux scripts Pig et PySpark.
-3. Exécutez le script run.sh en spécifiant le chemin vers le script de création du cluster comme argument :
-   ```bash
-   ./run.sh ~/LSDataManagment/CLUSTER/run_cluster0w.sh
-4. Exécutez le script topPageRank[...].sh en fonction du type de framework utilisé.
+3. Exécutez le script run.sh en spécifiant le chemin vers le script de création du cluster comme 1er argument:
+    ```bash
+    ./run.sh ~/LSDataManagment/CLUSTER/run_cluster0w.sh
+4. et pour le pagerank en SPARK préciser en second argument le type de pagerank avec ou sans partitionement:
+
+    ```bash
+    ./run.sh ~/LSDataManagment/CLUSTER/run_cluster2w.sh pagerankPartitioned.py
+5. Exécutez le script topPageRank[...].sh en fonction du type de framework utilisé.
     ```bash
     ./topPageRankSPARK.sh 
 ## Description des Dossiers et Fichiers
 
 - `LSDataManagment/CLUSTER/` : Contient les scripts pour créer et supprimer les clusters.
 - `LSDataManagment/PIG/` : Contient le code Pig pour l'implémentation de l'algorithme PageRank.
-- `LSDataManagment/PYSPARK/` : Contient le code PySpark pour l'implémentation de l'algorithme PageRank.
+- `LSDataManagment/PYSPARK/` : Contient le code PySpark pour l'implémentation de l'algorithme PageRank avec ou sans partitionement.
 
 
 # Contributors
@@ -81,3 +85,4 @@ Pour exécuter le code sur votre cluster, suivez les étapes ci-dessous :
 | -------------------------------------------------- | ---------------- |
 | [@MangoHiller](https://github.com/MangoHiller)     | Hugo LEGUILLIER  |
 | [@miranovic](https://github.com/miranovic)         | Imran NAAR       |
+| [@XTHunter](https://github.com/XTHunter)           | Gesser RIAHI     |
