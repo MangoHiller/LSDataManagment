@@ -15,7 +15,7 @@ CLUSTER_NAME="cluster-a35a"
 
 # Chemins
 DATA_PATH="gs://public_lddm_data/page_links_en.nt.bz2"
-PYSPARK_SCRIPT_PATH="~/LSDataManagment/SPARK/$PYSPARK_SCRIPT_NAME"  # Utilisation du paramètre PYSPARK_SCRIPT_NAME
+PYSPARK_SCRIPT_PATH=$PYSPARK_SCRIPT_NAME  # Utilisation du paramètre PYSPARK_SCRIPT_NAME
 
 # Définition du répertoire OUT_DIR en fonction du script PySpark
 if [[ "$PYSPARK_SCRIPT_NAME" == "pagerankPartitioned.py" ]]; then
@@ -38,7 +38,7 @@ bash $CLUSTER_CREATION_SCRIPT
 gcloud dataproc jobs submit pyspark \
 --region europe-central2 \
 --cluster $CLUSTER_NAME \
-$PYSPARK_SCRIPT_PATH -- gs://mybigbucket2024/page_links_en.nt.bz2 3 
+gs://mybigbucket2024/$PYSPARK_SCRIPT_PATH -- gs://mybigbucket2024/page_links_en.nt.bz2 3 
 
 # Accès aux résultats
 # Le nom de fichier part-r-00000 peut varier, vérifiez le nom correct dans votre bucket GCS
