@@ -18,11 +18,15 @@ Les temps d'exécution de l'algorithme PageRank pour chaque configuration sont r
 
 | Configuration       | Temps d'Exécution Pig | Temps d'Exécution PySpark | Temps d'Exécution PySpark + Partitionnement|
 |---------------------|-----------------------|---------------------------|--------------------------------------------|
-| 1 master, 0 workers | 1 h 43 min            | (Non testé)               | (Non testé)                                |
+| 1 master, 0 workers | 1 h 43 min            | (n/a)                     | (n/a)                                      |
 | 1 master, 2 workers | 51 min 43 s           | 41 min 2 s                | 42 min 14 s  (8 partitions)                |
 | 1 master, 3 workers | 41 min 43 s           | 38 min 9 s                | 36 min 14 s  (12 partitions)               |
-| 1 master, 4 workers | (Non testé)           | 35 min 46 s               | 25 min 58 s  (16 partitions)               |
-| 1 master, 5 workers | 36 min 31 s           | 34 min                    | (Non testé)                                |
+| 1 master, 4 workers | 38 min 51 s           | 35 min 46 s               | 25 min 58 s  (16 partitions)               |
+| 1 master, 5 workers | 36 min 31 s           | 34 min                    | 24 min 31 s  (20 partitions)               |
+
+### PIG vs PySpark vs PySpark avec partitionnement
+
+![Graphique temps d'éxecutions en fonction de la taille du cluster](Plot_comparaison_pageRank.png)
 
 ## Top 5 PageRank
 
