@@ -16,13 +16,13 @@ Les clusters sont configurés avec un nœud master et un nombre variable de nœu
 
 Les temps d'exécution de l'algorithme PageRank pour chaque configuration sont résumés dans le tableau ci-dessous :
 
-| Configuration       | Temps d'Exécution Pig | Temps d'Exécution PySpark |
-|---------------------|-----------------------|---------------------------|
-| 1 master, 0 workers | 1 h 43 min            | (Non testé)               |
-| 1 master, 2 workers | 51 min 43 s           | 41 min 2 s                |
-| 1 master, 3 workers | 41 min 43 s           | 38 min 9 s                |
-| 1 master, 4 workers | (Non testé)           | 35 min 46 s               |
-| 1 master, 5 workers | 36 min 31 s           | 34 min                    |
+| Configuration       | Temps d'Exécution Pig | Temps d'Exécution PySpark | Temps d'Exécution PySpark + Partitionnement|
+|---------------------|-----------------------|---------------------------|--------------------------------------------|
+| 1 master, 0 workers | 1 h 43 min            | (Non testé)               | (Non testé)                                |
+| 1 master, 2 workers | 51 min 43 s           | 41 min 2 s                | 42 min 14 s  (8 partitions)                |
+| 1 master, 3 workers | 41 min 43 s           | 38 min 9 s                | 36 min 14 s  (12 partitions)               |
+| 1 master, 4 workers | (Non testé)           | 35 min 46 s               | 25 min 58 s  (16 partitions)               |
+| 1 master, 5 workers | 36 min 31 s           | 34 min                    | (Non testé)                                |
 
 ## Top 5 PageRank
 
@@ -46,7 +46,8 @@ Les 5 URL avec le plus grand PageRank calculé par chaque implémentation sont l
 
 ## Conclusion
 
-Les résultats montrent une légère amélioration des temps d'exécution avec PySpark comparé à Apache Pig. Le classement des URL par PageRank est relativement similaire entre les deux implémentations, ce qui indique une cohérence dans les calculs effectués par les deux frameworks.
+Les résultats montrent une amélioration des temps d'exécution avec PySpark comparé à Apache Pig. Cette amélioration est encore plus nette avec l'utilisation du partionnement en fonction du nombres de coeurs.
+Le classement des URL par PageRank est relativement similaire entre les deux implémentations, ce qui indique une cohérence dans les calculs effectués par les deux frameworks.
 
 ## Code Source
 
@@ -65,7 +66,7 @@ Pour exécuter le code sur votre cluster, suivez les étapes ci-dessous :
 3. Exécutez le script run.sh en spécifiant le chemin vers le script de création du cluster comme 1er argument:
     ```bash
     ./run.sh ~/LSDataManagment/CLUSTER/run_cluster0w.sh
-4. et pour le pagerank en SPARK préciser en second argument le type de pagerank avec ou sans partitionement:
+4. et pour le pagerank en SPARK préciser en second argument le type de pagerank avec ou sans Partitionnement:
 
     ```bash
     ./run.sh ~/LSDataManagment/CLUSTER/run_cluster2w.sh pagerankPartitioned.py
@@ -76,7 +77,7 @@ Pour exécuter le code sur votre cluster, suivez les étapes ci-dessous :
 
 - `LSDataManagment/CLUSTER/` : Contient les scripts pour créer et supprimer les clusters.
 - `LSDataManagment/PIG/` : Contient le code Pig pour l'implémentation de l'algorithme PageRank.
-- `LSDataManagment/PYSPARK/` : Contient le code PySpark pour l'implémentation de l'algorithme PageRank avec ou sans partitionement.
+- `LSDataManagment/PYSPARK/` : Contient le code PySpark pour l'implémentation de l'algorithme PageRank avec ou sans Partitionnement.
 
 
 # Contributors
